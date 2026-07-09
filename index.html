@@ -1,0 +1,3044 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- =======================================================
+         PIZZATRACK PRO
+         Premium Restaurant Website
+         Developed for Production
+    ======================================================== -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PizzaTrack | Premium Pizza & Fast Food Restaurant</title>
+
+    <meta name="description"
+        content="Order delicious Pizza, Burgers, Pasta, Fries, Wraps, Drinks and Family Deals online. Fast Delivery with Premium Quality.">
+
+    <meta name="keywords"
+        content="Pizza, Burger, Restaurant, Food Delivery, Fast Food, PizzaTrack">
+
+    <meta name="author" content="PizzaTrack">
+
+    <meta property="og:title" content="PizzaTrack">
+    <meta property="og:description"
+        content="Premium Restaurant & Food Ordering Website">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="logo.png">
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Swiper -->
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- AOS -->
+
+    <link rel="stylesheet"
+        href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <!-- Main CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- =======================================================
+LOADER
+======================================================= -->
+
+<div class="loader-overlay" id="loader">
+
+    <div class="loader-pulse"></div>
+
+    <div class="loader"></div>
+
+    <h2 class="loader-logo">
+        Pizza<span>Track</span>
+    </h2>
+
+</div>
+
+<!-- =======================================================
+COOKIE BANNER
+======================================================= -->
+
+<div class="cookie-banner" id="cookieBanner">
+
+    <div class="cookie-content">
+
+        <i class="fa-solid fa-cookie-bite"></i>
+
+        <div>
+
+            <h3>We Use Cookies</h3>
+
+            <p>
+                We use cookies to improve your browsing experience,
+                analyze website traffic and personalize content.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="cookie-buttons">
+
+        <button class="btn btn-outline" id="rejectCookies">
+            Reject
+        </button>
+
+        <button class="btn btn-primary" id="acceptCookies">
+            Accept
+        </button>
+
+    </div>
+
+</div>
+
+<!-- =======================================================
+HEADER
+======================================================= -->
+
+<header>
+
+<nav class="navbar" id="navbar">
+
+<div class="container">
+
+<!-- Logo -->
+
+<a href="#" class="logo">
+
+<div class="logo-icon">
+
+<i class="fa-solid fa-pizza-slice"></i>
+
+</div>
+
+<h2>
+
+Pizza<span>Track</span>
+
+</h2>
+
+</a>
+
+<!-- Desktop Navigation -->
+
+<ul class="nav-menu">
+
+<li><a href="#home" class="nav-link active">Home</a></li>
+
+<li><a href="#menu" class="nav-link">Menu</a></li>
+
+<li><a href="#deals" class="nav-link">Deals</a></li>
+
+<li><a href="#categories" class="nav-link">Categories</a></li>
+
+<li><a href="#about" class="nav-link">About</a></li>
+
+<li><a href="#reviews" class="nav-link">Reviews</a></li>
+
+<li><a href="#location" class="nav-link">Location</a></li>
+
+<li><a href="#contact" class="nav-link">Contact</a></li>
+
+</ul>
+
+<!-- Right Icons -->
+
+<div class="nav-actions">
+
+<button class="nav-icon-btn" id="searchBtn">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</button>
+
+<button class="nav-icon-btn" id="wishlistBtn">
+
+<i class="fa-regular fa-heart"></i>
+
+<span class="nav-badge">
+
+0
+
+</span>
+
+</button>
+
+<button class="nav-icon-btn" id="cartBtn">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span class="nav-badge">
+
+0
+
+</span>
+
+</button>
+
+<button class="nav-icon-btn" id="themeToggle" title="Toggle day/night mode">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+<button class="btn btn-primary login-btn" id="loginBtn">
+
+<i class="fa-solid fa-user"></i>
+
+<span class="login-btn-text">Login</span>
+
+</button>
+
+<div class="user-chip" id="userChip">
+
+<i class="fa-solid fa-circle-user"></i>
+
+<span id="userChipName" class="user-chip-text"></span>
+
+<button id="logoutBtn" title="Logout">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+</button>
+
+</div>
+
+<button class="mobile-toggle" id="mobileToggle">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</button>
+
+</div>
+
+</div>
+
+</nav>
+
+</header>
+
+<!-- =======================================================
+MOBILE MENU
+======================================================= -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+<a href="#home" class="nav-link">🏠 Home</a>
+<a href="#categories" class="nav-link">🗂️ Categories</a>
+<a href="#deals" class="nav-link">🔥 Deals</a>
+<a href="#menu" class="nav-link mobile-filter-link" data-filter="pizza">🍕 Pizza</a>
+<a href="#menu" class="nav-link mobile-filter-link" data-filter="burger">🍔 Burgers</a>
+<a href="#menu" class="nav-link mobile-filter-link" data-filter="pasta">🍝 Pasta</a>
+<a href="#menu" class="nav-link mobile-filter-link" data-filter="sides">🌯 Sides & Wraps</a>
+<a href="#menu" class="nav-link mobile-filter-link" data-filter="drinks">🥤 Drinks</a>
+<a href="#menu" class="nav-link mobile-filter-link" data-filter="desserts">🍰 Desserts</a>
+<a href="#about" class="nav-link">ℹ️ About</a>
+<a href="#location" class="nav-link">📍 Location</a>
+<a href="#reviews" class="nav-link">⭐ Reviews</a>
+<a href="#contact" class="nav-link">📞 Contact</a>
+
+<div class="mobile-menu-actions">
+  <a href="#menu" class="btn btn-primary" style="justify-content:center;">
+    🛒 Order Now
+  </a>
+</div>
+
+</div>
+
+<!-- =======================================================
+SEARCH OVERLAY
+======================================================= -->
+
+<div class="search-overlay" id="searchOverlay">
+
+<div class="search-box">
+
+<input
+id="overlaySearchInput"
+type="text"
+placeholder="Search Pizza, Burger, Drinks...">
+
+<button type="button" id="overlaySearchBtn">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</button>
+
+</div>
+
+<p class="search-hint">Press Enter or tap the search icon to see results</p>
+
+</div>
+
+<!-- =======================================================
+HERO SECTION STARTS HERE
+======================================================= -->
+
+<section class="hero-slider" id="home">
+
+  <!-- ===========================
+HERO SLIDE 1
+=========================== -->
+
+<div class="hero-slide active">
+
+    <div class="hero-bg"
+        style="background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1800&q=80');">
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+
+        <div class="hero-content" data-aos="fade-up">
+
+            <span class="hero-label">
+                🔥 Premium Restaurant
+            </span>
+
+            <h1 class="hero-title">
+                Fresh Pizza
+                <br>
+                Made With
+                <span class="gradient-text">
+                    Love
+                </span>
+            </h1>
+
+            <p class="hero-description">
+
+                Discover handcrafted pizzas made with fresh ingredients,
+                premium cheese and authentic flavors. Fast delivery right to
+                your doorstep.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#menu" class="btn btn-primary">
+
+                    Order Now
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+                <a href="#deals" class="btn btn-outline">
+
+                    View Deals
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+HERO SLIDE 2
+=========================== -->
+
+<div class="hero-slide">
+
+    <div class="hero-bg"
+        style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1800&q=80');">
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+
+                🍕 Best Seller
+
+            </span>
+
+            <h1 class="hero-title">
+
+                Crispy Crust
+
+                <br>
+
+                Extra Cheese
+
+            </h1>
+
+            <p class="hero-description">
+
+                Taste our signature pizzas topped with premium mozzarella,
+                fresh vegetables and delicious sauces.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#menu" class="btn btn-primary">
+
+                    Explore Menu
+
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+
+                    Contact Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+HERO SLIDE 3
+=========================== -->
+
+<div class="hero-slide">
+
+    <div class="hero-bg"
+        style="background-image:url('https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=1800&q=80');">
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+
+                🚀 Fast Delivery
+
+            </span>
+
+            <h1 class="hero-title">
+
+                Hot & Fresh
+
+                <br>
+
+                Delivered Fast
+
+            </h1>
+
+            <p class="hero-description">
+
+                Order online and enjoy quick delivery with guaranteed freshness
+                and premium quality.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#menu" class="btn btn-primary">
+
+                    Order Online
+
+                </a>
+
+                <a href="#about" class="btn btn-outline">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+HERO CONTROLS
+=========================== -->
+
+<div class="hero-controls">
+
+    <button class="hero-arrow prev-slide">
+
+        <i class="fa-solid fa-chevron-left"></i>
+
+    </button>
+
+    <div class="hero-dots">
+
+        <button class="hero-dot active"></button>
+
+        <button class="hero-dot"></button>
+
+        <button class="hero-dot"></button>
+
+    </div>
+
+    <button class="hero-arrow next-slide">
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+    </button>
+
+</div>
+
+</section>
+
+<!-- ===========================
+FEATURES SECTION
+=========================== -->
+
+<section class="section-padding">
+
+    <div class="container">
+
+        <div class="features-grid">
+
+            <div class="feature-card" data-aos="fade-up">
+
+                <div class="feature-icon">
+
+                    <i class="fa-solid fa-truck-fast"></i>
+
+                </div>
+
+                <h3 class="feature-title">
+
+                    Fast Delivery
+
+                </h3>
+
+                <p class="feature-text">
+
+                    Get your favorite food delivered in under 30 minutes.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="feature-icon">
+
+                    <i class="fa-solid fa-pizza-slice"></i>
+
+                </div>
+
+                <h3 class="feature-title">
+
+                    Fresh Ingredients
+
+                </h3>
+
+                <p class="feature-text">
+
+                    Only premium and fresh ingredients are used every day.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="feature-icon">
+
+                    <i class="fa-solid fa-award"></i>
+
+                </div>
+
+                <h3 class="feature-title">
+
+                    Best Quality
+
+                </h3>
+
+                <p class="feature-text">
+
+                    Quality food prepared by experienced chefs.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+
+                <div class="feature-icon">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                </div>
+
+                <h3 class="feature-title">
+
+                    24/7 Support
+
+                </h3>
+
+                <p class="feature-text">
+
+                    Friendly customer support whenever you need help.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+CATEGORIES SECTION START
+=========================== -->
+
+<section class="section-padding" id="categories">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Browse Our <span class="gradient-text">Categories</span>
+
+</h2>
+
+<p class="section-subtitle">
+
+Choose your favorite meal from our delicious collection.
+
+</p>
+
+<div class="categories-grid">
+
+
+  <!-- ===========================
+CATEGORY 1
+=========================== -->
+
+<div class="category-card" data-aos="zoom-in">
+
+    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80"
+        alt="Pizza">
+
+    <div class="category-overlay">
+
+        <div class="category-icon">
+            🍕
+        </div>
+
+        <h3 class="category-name">
+            Pizza
+        </h3>
+
+        <span class="category-count">
+            18 Items
+        </span>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+CATEGORY 2
+=========================== -->
+
+<div class="category-card" data-aos="zoom-in" data-aos-delay="100">
+
+    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80"
+        alt="Burger">
+
+    <div class="category-overlay">
+
+        <div class="category-icon">
+            🍔
+        </div>
+
+        <h3 class="category-name">
+            Burgers
+        </h3>
+
+        <span class="category-count">
+            10 Items
+        </span>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+CATEGORY 3
+=========================== -->
+
+<div class="category-card" data-aos="zoom-in" data-aos-delay="200">
+
+    <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=700&q=80"
+        alt="Pasta">
+
+    <div class="category-overlay">
+
+        <div class="category-icon">
+            🍝
+        </div>
+
+        <h3 class="category-name">
+            Pasta
+        </h3>
+
+        <span class="category-count">
+            8 Items
+        </span>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+CATEGORY 4
+=========================== -->
+
+<div class="category-card" data-aos="zoom-in" data-aos-delay="300">
+
+    <img src="https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=700&q=80"
+        alt="Fries">
+
+    <div class="category-overlay">
+
+        <div class="category-icon">
+            🍟
+        </div>
+
+        <h3 class="category-name">
+            Fries
+        </h3>
+
+        <span class="category-count">
+            7 Items
+        </span>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+CATEGORY 5
+=========================== -->
+
+<div class="category-card" data-aos="zoom-in" data-aos-delay="400">
+
+    <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=700&q=80"
+        alt="Wraps">
+
+    <div class="category-overlay">
+
+        <div class="category-icon">
+            🌯
+        </div>
+
+        <h3 class="category-name">
+            Wraps
+        </h3>
+
+        <span class="category-count">
+            6 Items
+        </span>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+CATEGORY 6
+=========================== -->
+
+<div class="category-card" data-aos="zoom-in" data-aos-delay="500">
+
+    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80"
+        alt="Drinks">
+
+    <div class="category-overlay">
+
+        <div class="category-icon">
+            🥤
+        </div>
+
+        <h3 class="category-name">
+            Drinks
+        </h3>
+
+        <span class="category-count">
+            15 Items
+        </span>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+TODAY'S SPECIAL DEALS
+=========================== -->
+
+<section class="section-padding" id="deals">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Today's <span class="gradient-text">Special Deals</span>
+
+</h2>
+
+<p class="section-subtitle">
+
+Save more with our hottest combo offers.
+
+</p>
+
+<div class="deals-grid">
+
+<div class="deal-card">
+
+<div class="deal-content">
+
+<span class="deal-label">
+
+40% OFF
+
+</span>
+
+<h3 class="deal-title">
+
+Family Mega Deal
+
+</h3>
+
+<p class="deal-text">
+
+2 Large Pizzas + 8 Wings + 1.5L Drink
+
+</p>
+
+<div class="deal-price">
+
+PKR 2,999
+
+<span>
+
+PKR 4,999
+
+</span>
+
+</div>
+
+<a href="#menu" class="btn btn-primary">
+
+Order Now
+
+</a>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80"
+alt="Deal">
+
+</div>
+
+<div class="deal-card">
+
+<div class="deal-content">
+
+<span class="deal-label">
+
+HOT DEAL
+
+</span>
+
+<h3 class="deal-title">
+
+Burger Combo
+
+</h3>
+
+<p class="deal-text">
+
+2 Premium Burgers + Fries + Drinks
+
+</p>
+
+<div class="deal-price">
+
+PKR 1,499
+
+<span>
+
+PKR 2,199
+
+</span>
+
+</div>
+
+<a href="#menu" class="btn btn-primary">
+
+Order Now
+
+</a>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+alt="Burger Deal">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+MENU SECTION STARTS
+=========================== -->
+
+<section class="section-padding" id="menu">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Our <span class="gradient-text">Popular Menu</span>
+
+</h2>
+
+<p class="section-subtitle">
+
+Freshly prepared meals with premium ingredients.
+
+</p>
+
+<div class="menu-tabs" id="menuTabs">
+  <button class="active" data-filter="all">🍽️ All</button>
+  <button data-filter="pizza">🍕 Pizza</button>
+  <button data-filter="burger">🍔 Burgers</button>
+  <button data-filter="pasta">🍝 Pasta</button>
+  <button data-filter="sides">🌯 Sides</button>
+  <button data-filter="drinks">🥤 Drinks</button>
+  <button data-filter="desserts">🍰 Desserts</button>
+</div>
+
+<div class="menu-grid">
+
+  <!-- ===========================
+MENU CARD 1
+=========================== -->
+
+<div class="menu-card" data-category="pizza" data-aos="fade-up">
+
+    <div class="menu-image">
+
+        <span class="menu-badge">Best Seller</span>
+
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80"
+            alt="Pepperoni Pizza">
+
+        <div class="menu-actions">
+
+            <button class="action-btn wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn quick-view-btn">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="menu-content">
+
+        <div class="menu-rating">
+
+            ⭐⭐⭐⭐⭐
+            <span>(4.9)</span>
+
+        </div>
+
+        <h3 class="menu-title">
+            Pepperoni Supreme Pizza
+        </h3>
+
+        <p class="menu-description">
+
+            Premium mozzarella cheese, spicy pepperoni,
+            tomato sauce and fresh herbs.
+
+        </p>
+
+        <div class="menu-footer">
+
+            <div class="price">
+
+                PKR 1,799
+
+                <span>PKR 2,199</span>
+
+            </div>
+
+            <button class="btn btn-primary add-cart">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Add
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+MENU CARD 2
+=========================== -->
+
+<div class="menu-card" data-category="burger" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="menu-image">
+
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+            alt="Burger">
+
+        <div class="menu-actions">
+
+            <button class="action-btn wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn quick-view-btn">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="menu-content">
+
+        <div class="menu-rating">
+
+            ⭐⭐⭐⭐⭐
+            <span>(4.8)</span>
+
+        </div>
+
+        <h3 class="menu-title">
+            Double Beef Burger
+        </h3>
+
+        <p class="menu-description">
+
+            Double beef patties with cheddar cheese,
+            lettuce, tomato and signature sauce.
+
+        </p>
+
+        <div class="menu-footer">
+
+            <div class="price">
+
+                PKR 899
+
+                <span>PKR 1,099</span>
+
+            </div>
+
+            <button class="btn btn-primary add-cart">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Add
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+MENU CARD 3
+=========================== -->
+
+<div class="menu-card" data-category="pasta" data-aos="fade-up" data-aos-delay="200">
+
+    <div class="menu-image">
+
+        <span class="menu-badge">New</span>
+
+        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=800&q=80"
+            alt="Pasta">
+
+        <div class="menu-actions">
+
+            <button class="action-btn wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn quick-view-btn">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="menu-content">
+
+        <div class="menu-rating">
+
+            ⭐⭐⭐⭐⭐
+            <span>(4.7)</span>
+
+        </div>
+
+        <h3 class="menu-title">
+            Creamy Alfredo Pasta
+        </h3>
+
+        <p class="menu-description">
+
+            Creamy Alfredo sauce with grilled chicken,
+            mushrooms and parmesan cheese.
+
+        </p>
+
+        <div class="menu-footer">
+
+            <div class="price">
+
+                PKR 1,099
+
+                <span>PKR 1,299</span>
+
+            </div>
+
+            <button class="btn btn-primary add-cart">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Add
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+MENU CARD 4
+=========================== -->
+
+<div class="menu-card" data-category="sides" data-aos="fade-up" data-aos-delay="300">
+
+    <div class="menu-image">
+
+        <img src="https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=800&q=80"
+            alt="Fries">
+
+        <div class="menu-actions">
+
+            <button class="action-btn wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn quick-view-btn">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="menu-content">
+
+        <div class="menu-rating">
+
+            ⭐⭐⭐⭐⭐
+            <span>(4.8)</span>
+
+        </div>
+
+        <h3 class="menu-title">
+            Loaded Cheese Fries
+        </h3>
+
+        <p class="menu-description">
+
+            Crispy fries topped with cheddar cheese,
+            jalapeños and spicy sauce.
+
+        </p>
+
+        <div class="menu-footer">
+
+            <div class="price">
+
+                PKR 599
+
+                <span>PKR 799</span>
+
+            </div>
+
+            <button class="btn btn-primary add-cart">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Add
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- ===========================
+MENU CARD 5
+=========================== -->
+
+<div class="menu-card" data-category="pizza" data-aos="fade-up">
+
+    <div class="menu-image">
+
+        <span class="menu-badge">Popular</span>
+
+        <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80"
+            alt="BBQ Chicken Pizza">
+
+        <div class="menu-actions">
+
+            <button class="action-btn wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn quick-view-btn">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="menu-content">
+
+        <div class="menu-rating">
+            ⭐⭐⭐⭐⭐ <span>(4.9)</span>
+        </div>
+
+        <h3 class="menu-title">
+            BBQ Chicken Pizza
+        </h3>
+
+        <p class="menu-description">
+            Grilled chicken, BBQ sauce, onions and mozzarella cheese.
+        </p>
+
+        <div class="menu-footer">
+
+            <div class="price">
+                PKR 1,499
+                <span>PKR 1,799</span>
+            </div>
+
+            <button class="btn btn-primary add-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+MENU CARD 6
+=========================== -->
+
+<div class="menu-card" data-category="burger" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="menu-image">
+
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=80"
+            alt="Zinger Burger">
+
+        <div class="menu-actions">
+
+            <button class="action-btn wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn quick-view-btn">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="menu-content">
+
+        <div class="menu-rating">
+            ⭐⭐⭐⭐⭐ <span>(4.8)</span>
+        </div>
+
+        <h3 class="menu-title">
+            Crispy Zinger Burger
+        </h3>
+
+        <p class="menu-description">
+            Crispy chicken fillet with lettuce, cheese and spicy mayo.
+        </p>
+
+        <div class="menu-footer">
+
+            <div class="price">
+                PKR 749
+                <span>PKR 899</span>
+            </div>
+
+            <button class="btn btn-primary add-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+MENU CARD 7
+=========================== -->
+
+<div class="menu-card" data-category="sides" data-aos="fade-up" data-aos-delay="200">
+
+    <div class="menu-image">
+
+        <span class="menu-badge">Chef Special</span>
+
+        <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=900&q=80"
+            alt="Wrap">
+
+        <div class="menu-actions">
+
+            <button class="action-btn wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn quick-view-btn">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="menu-content">
+
+        <div class="menu-rating">
+            ⭐⭐⭐⭐⭐ <span>(4.9)</span>
+        </div>
+
+        <h3 class="menu-title">
+            Chicken Fajita Wrap
+        </h3>
+
+        <p class="menu-description">
+            Tender grilled chicken with vegetables wrapped in a soft tortilla.
+        </p>
+
+        <div class="menu-footer">
+
+            <div class="price">
+                PKR 699
+                <span>PKR 899</span>
+            </div>
+
+            <button class="btn btn-primary add-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+MENU CARD 8
+=========================== -->
+
+<div class="menu-card" data-category="drinks" data-aos="fade-up" data-aos-delay="300">
+
+    <div class="menu-image">
+
+        <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=900&q=80"
+            alt="Chocolate Shake">
+
+        <div class="menu-actions">
+
+            <button class="action-btn wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn quick-view-btn">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="menu-content">
+
+        <div class="menu-rating">
+            ⭐⭐⭐⭐⭐ <span>(4.7)</span>
+        </div>
+
+        <h3 class="menu-title">
+            Chocolate Milkshake
+        </h3>
+
+        <p class="menu-description">
+            Rich chocolate shake topped with whipped cream and chocolate syrup.
+        </p>
+
+        <div class="menu-footer">
+
+            <div class="price">
+                PKR 499
+                <span>PKR 599</span>
+            </div>
+
+            <button class="btn btn-primary add-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<div class="text-center" style="margin-top:60px;">
+
+    <a href="#" class="btn btn-primary">
+
+        View Complete Menu
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+BEST SELLERS SECTION STARTS HERE
+========================================== -->
+
+<section class="section-padding" id="best-sellers">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Our <span class="gradient-text">Best Sellers</span>
+
+</h2>
+
+<p class="section-subtitle">
+
+Customer favorites prepared fresh every day.
+
+</p>
+
+<div class="best-seller-grid">
+
+  <!-- ===========================
+BEST SELLER CARD 1
+=========================== -->
+
+<div class="menu-card" data-category="pizza" data-aos="fade-up">
+
+    <div class="menu-image">
+
+        <span class="menu-badge">#1 Seller</span>
+
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80"
+            alt="Ultimate Pepperoni Pizza">
+
+        <div class="menu-actions">
+
+            <button class="action-btn wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn quick-view-btn">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="menu-content">
+
+        <div class="menu-rating">
+            ⭐⭐⭐⭐⭐ <span>(5.0)</span>
+        </div>
+
+        <h3 class="menu-title">
+            Ultimate Pepperoni Pizza
+        </h3>
+
+        <p class="menu-description">
+            Loaded with pepperoni, mozzarella, parmesan and signature tomato sauce.
+        </p>
+
+        <div class="menu-footer">
+
+            <div class="price">
+                PKR 1,899
+                <span>PKR 2,299</span>
+            </div>
+
+            <button class="btn btn-primary add-cart">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Add
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+BEST SELLER CARD 2
+=========================== -->
+
+<div class="menu-card" data-category="burger" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="menu-image">
+
+        <span class="menu-badge">Popular</span>
+
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=80"
+            alt="Chicken Burger">
+
+        <div class="menu-actions">
+
+            <button class="action-btn wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn quick-view-btn">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="menu-content">
+
+        <div class="menu-rating">
+            ⭐⭐⭐⭐⭐ <span>(4.9)</span>
+        </div>
+
+        <h3 class="menu-title">
+            Crispy Chicken Burger
+        </h3>
+
+        <p class="menu-description">
+            Golden fried chicken, lettuce, cheddar cheese and garlic mayo.
+        </p>
+
+        <div class="menu-footer">
+
+            <div class="price">
+                PKR 799
+                <span>PKR 999</span>
+            </div>
+
+            <button class="btn btn-primary add-cart">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Add
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+BEST SELLER CARD 3
+=========================== -->
+
+<div class="menu-card" data-category="pasta" data-aos="fade-up" data-aos-delay="200">
+
+    <div class="menu-image">
+
+        <span class="menu-badge">Hot</span>
+
+        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=900&q=80"
+            alt="Creamy Pasta">
+
+        <div class="menu-actions">
+
+            <button class="action-btn wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn quick-view-btn">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="menu-content">
+
+        <div class="menu-rating">
+            ⭐⭐⭐⭐⭐ <span>(4.8)</span>
+        </div>
+
+        <h3 class="menu-title">
+            Creamy Chicken Alfredo
+        </h3>
+
+        <p class="menu-description">
+            Creamy Alfredo sauce with grilled chicken and parmesan cheese.
+        </p>
+
+        <div class="menu-footer">
+
+            <div class="price">
+                PKR 1,099
+                <span>PKR 1,299</span>
+            </div>
+
+            <button class="btn btn-primary add-cart">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Add
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+MENU CARD 12 — Fresh Lemonade (Drinks)
+=========================== -->
+
+<div class="menu-card" data-category="drinks" data-aos="fade-up">
+
+    <div class="menu-image">
+
+        <img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&w=800&q=80"
+            alt="Fresh Lemonade">
+
+        <div class="menu-actions">
+
+            <button class="action-btn wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn quick-view-btn">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="menu-content">
+
+        <div class="menu-rating">
+            ⭐⭐⭐⭐⭐ <span>(4.6)</span>
+        </div>
+
+        <h3 class="menu-title">
+            Fresh Lemonade
+        </h3>
+
+        <p class="menu-description">
+            Chilled, refreshing lemonade made with real lemons and mint.
+        </p>
+
+        <div class="menu-footer">
+
+            <div class="price">
+                PKR 299
+                <span>PKR 399</span>
+            </div>
+
+            <button class="btn btn-primary add-cart">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Add
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+MENU CARD 13 — Chocolate Lava Cake (Desserts)
+=========================== -->
+
+<div class="menu-card" data-category="desserts" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="menu-image">
+
+        <span class="menu-badge">Chef Special</span>
+
+        <img src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=800&q=80"
+            alt="Chocolate Lava Cake">
+
+        <div class="menu-actions">
+
+            <button class="action-btn wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn quick-view-btn">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="menu-content">
+
+        <div class="menu-rating">
+            ⭐⭐⭐⭐⭐ <span>(4.9)</span>
+        </div>
+
+        <h3 class="menu-title">
+            Chocolate Lava Cake
+        </h3>
+
+        <p class="menu-description">
+            Warm chocolate cake with a molten center, served with vanilla ice cream.
+        </p>
+
+        <div class="menu-footer">
+
+            <div class="price">
+                PKR 549
+                <span>PKR 699</span>
+            </div>
+
+            <button class="btn btn-primary add-cart">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Add
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+MENU CARD 14 — New York Cheesecake (Desserts)
+=========================== -->
+
+<div class="menu-card" data-category="desserts" data-aos="fade-up" data-aos-delay="200">
+
+    <div class="menu-image">
+
+        <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80"
+            alt="New York Cheesecake">
+
+        <div class="menu-actions">
+
+            <button class="action-btn wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn quick-view-btn">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="menu-content">
+
+        <div class="menu-rating">
+            ⭐⭐⭐⭐⭐ <span>(4.7)</span>
+        </div>
+
+        <h3 class="menu-title">
+            New York Cheesecake
+        </h3>
+
+        <p class="menu-description">
+            Rich and creamy classic cheesecake with a buttery biscuit base.
+        </p>
+
+        <div class="menu-footer">
+
+            <div class="price">
+                PKR 599
+                <span>PKR 749</span>
+            </div>
+
+            <button class="btn btn-primary add-cart">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Add
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================
+FAMILY DEALS
+=================================== -->
+
+<section class="section-padding">
+
+<div class="container">
+
+<div class="deal-card" data-aos="zoom-in">
+
+<div class="deal-content">
+
+<span class="deal-label">
+
+LIMITED OFFER
+
+</span>
+
+<h2 class="deal-title">
+
+Family Feast Deal
+
+</h2>
+
+<p class="deal-text">
+
+✔ 2 Large Pizzas
+
+<br>
+
+✔ 8 Crispy Wings
+
+<br>
+
+✔ Large Fries
+
+<br>
+
+✔ 1.5L Soft Drink
+
+</p>
+
+<div class="deal-price">
+
+PKR 3,499
+
+<span>
+
+PKR 4,999
+
+</span>
+
+</div>
+
+<a href="#menu" class="btn btn-primary">
+
+Order Family Deal
+
+</a>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80"
+alt="Family Deal">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================
+CHEF SPECIAL BANNER
+=================================== -->
+
+<section class="section-padding">
+
+<div class="container">
+
+<div class="feature-card text-center" data-aos="fade-up">
+
+<div class="feature-icon">
+
+👨‍🍳
+
+</div>
+
+<h2 class="section-title">
+
+Chef's <span class="gradient-text">Recommendation</span>
+
+</h2>
+
+<p class="section-subtitle">
+
+Every pizza is handcrafted using fresh dough, premium mozzarella,
+homemade sauces and carefully selected ingredients to deliver an unforgettable taste.
+
+</p>
+
+<a href="#menu" class="btn btn-primary">
+
+Explore Specials
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================
+ABOUT SECTION STARTS
+=================================== -->
+
+<section class="section-padding" id="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+  <!-- ===================================
+ABOUT CONTENT
+=================================== -->
+
+<div class="about-content" data-aos="fade-right">
+
+    <span class="section-tag">
+
+        About PizzaTrack
+
+    </span>
+
+    <h2 class="section-title">
+
+        We Don't Just Make Pizza,
+
+        <span class="gradient-text">
+
+            We Create Happiness.
+
+        </span>
+
+    </h2>
+
+    <p class="about-text">
+
+        PizzaTrack is a premium restaurant dedicated to delivering
+        fresh, delicious and high-quality food using carefully selected
+        ingredients. Every order is prepared with passion to ensure
+        an unforgettable dining experience.
+
+    </p>
+
+    <p class="about-text">
+
+        Whether you're craving pizza, burgers, pasta, wraps or desserts,
+        our chefs prepare every meal fresh with authentic flavors
+        and exceptional quality.
+
+    </p>
+
+    <div class="about-features">
+
+        <div class="about-feature">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            Fresh Ingredients Daily
+
+        </div>
+
+        <div class="about-feature">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            Fast Delivery Service
+
+        </div>
+
+        <div class="about-feature">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            Premium Quality Standards
+
+        </div>
+
+        <div class="about-feature">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            Experienced Professional Chefs
+
+        </div>
+
+    </div>
+
+    <div class="about-buttons">
+
+        <a href="#menu" class="btn btn-primary">
+
+            Explore Menu
+
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+
+            Contact Us
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- ===================================
+ABOUT IMAGE
+=================================== -->
+
+<div class="about-image" data-aos="fade-left">
+
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80"
+        alt="Restaurant">
+
+</div>
+
+</div>
+
+<!-- ===================================
+STATISTICS
+=================================== -->
+
+<div class="stats-grid">
+
+    <div class="stat-card" data-aos="zoom-in">
+
+        <h2 class="counter">
+
+            25+
+
+        </h2>
+
+        <p>
+
+            Years Experience
+
+        </p>
+
+    </div>
+
+    <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+
+        <h2 class="counter">
+
+            50K+
+
+        </h2>
+
+        <p>
+
+            Happy Customers
+
+        </p>
+
+    </div>
+
+    <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+
+        <h2 class="counter">
+
+            120+
+
+        </h2>
+
+        <p>
+
+            Delicious Recipes
+
+        </p>
+
+    </div>
+
+    <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+
+        <h2 class="counter">
+
+            4.9★
+
+        </h2>
+
+        <p>
+
+            Customer Rating
+
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================
+WHY CHOOSE US
+=================================== -->
+
+<section class="section-padding">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-tag">
+
+Why Choose Us
+
+</span>
+
+<h2 class="section-title">
+
+Why Customers
+
+<span class="gradient-text">
+
+Love PizzaTrack
+
+</span>
+
+</h2>
+
+<p class="section-subtitle">
+
+We combine premium ingredients, experienced chefs and
+fast delivery to provide the best dining experience.
+
+</p>
+
+</div>
+
+<div class="why-grid">
+
+<div class="why-card" data-aos="fade-up">
+
+<div class="why-icon">
+
+<i class="fa-solid fa-seedling"></i>
+
+</div>
+
+<h3>
+
+Fresh Ingredients
+
+</h3>
+
+<p>
+
+Every meal is prepared using fresh vegetables,
+premium cheese and quality meat.
+
+</p>
+
+</div>
+
+<div class="why-card" data-aos="fade-up" data-aos-delay="100">
+
+<div class="why-icon">
+
+<i class="fa-solid fa-fire"></i>
+
+</div>
+
+<h3>
+
+Hot & Fresh
+
+</h3>
+
+<p>
+
+Every order is freshly prepared after you place it.
+
+</p>
+
+</div>
+
+<div class="why-card" data-aos="fade-up" data-aos-delay="200">
+
+<div class="why-icon">
+
+<i class="fa-solid fa-truck-fast"></i>
+
+</div>
+
+<h3>
+
+Fast Delivery
+
+</h3>
+
+<p>
+
+Quick delivery to your doorstep while keeping food fresh.
+
+</p>
+
+</div>
+
+<div class="why-card" data-aos="fade-up" data-aos-delay="300">
+
+<div class="why-icon">
+
+<i class="fa-solid fa-shield-heart"></i>
+
+</div>
+
+<h3>
+
+Quality Guaranteed
+
+</h3>
+
+<p>
+
+Every order is carefully checked before delivery.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================
+CUSTOMER REVIEWS START
+=================================== -->
+
+<section class="section-padding" id="reviews">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-tag">
+
+Testimonials
+
+</span>
+
+<h2 class="section-title">
+
+What Our
+
+<span class="gradient-text">
+
+Customers Say
+
+</span>
+
+</h2>
+
+<p class="section-subtitle">
+
+Real reviews from our happy customers.
+
+</p>
+
+</div>
+
+<div class="reviews-grid">
+
+  <!-- ===================================
+REVIEW CARD 1
+=================================== -->
+
+<div class="review-card" data-aos="fade-up">
+
+    <div class="review-top">
+
+        <img src="https://randomuser.me/api/portraits/men/32.jpg"
+            alt="Customer">
+
+        <div>
+
+            <h3>Ahmed Khan</h3>
+
+            <span>Lahore</span>
+
+        </div>
+
+    </div>
+
+    <div class="review-stars">
+
+        ★★★★★
+
+    </div>
+
+    <p>
+
+        Absolutely amazing pizza! Fresh ingredients,
+        quick delivery and excellent customer service.
+        Highly recommended.
+
+    </p>
+
+</div>
+
+<!-- ===================================
+REVIEW CARD 2
+=================================== -->
+
+<div class="review-card" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="review-top">
+
+        <img src="https://randomuser.me/api/portraits/women/45.jpg"
+            alt="Customer">
+
+        <div>
+
+            <h3>Sarah Ali</h3>
+
+            <span>Islamabad</span>
+
+        </div>
+
+    </div>
+
+    <div class="review-stars">
+
+        ★★★★★
+
+    </div>
+
+    <p>
+
+        Best burgers I've ever had.
+        Packaging was perfect and delivery
+        arrived before time.
+
+    </p>
+
+</div>
+
+<!-- ===================================
+REVIEW CARD 3
+=================================== -->
+
+<div class="review-card" data-aos="fade-up" data-aos-delay="200">
+
+    <div class="review-top">
+
+        <img src="https://randomuser.me/api/portraits/men/75.jpg"
+            alt="Customer">
+
+        <div>
+
+            <h3>Usman Tariq</h3>
+
+            <span>Karachi</span>
+
+        </div>
+
+    </div>
+
+    <div class="review-stars">
+
+        ★★★★★
+
+    </div>
+
+    <p>
+
+        Family Deal was worth every rupee.
+        Everything was hot, fresh and delicious.
+
+    </p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================
+FAQ
+=================================== -->
+
+<section class="section-padding" id="faq">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-tag">
+
+FAQ
+
+</span>
+
+<h2 class="section-title">
+
+Frequently Asked
+
+<span class="gradient-text">
+
+Questions
+
+</span>
+
+</h2>
+
+</div>
+
+<div class="faq-container">
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+How long does delivery take?
+
+<i class="fa-solid fa-plus"></i>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Usually between 25–40 minutes,
+depending on your location.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Do you offer online payments?
+
+<i class="fa-solid fa-plus"></i>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Yes. We accept Debit Cards,
+Credit Cards and Cash on Delivery.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Can I customize my pizza?
+
+<i class="fa-solid fa-plus"></i>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Yes! Add or remove toppings
+according to your preference.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================
+CONTACT
+=================================== -->
+
+<section class="section-padding" id="contact">
+
+<div class="container">
+
+<div class="contact-grid">
+
+<div class="contact-info">
+
+<span class="section-tag">
+
+Contact
+
+</span>
+
+<h2 class="section-title">
+
+Let's Talk
+
+</h2>
+
+<p>
+
+Have questions or want to place an order?
+Our team is always ready to help.
+
+</p>
+
+<div class="contact-item">
+
+<i class="fa-solid fa-phone"></i>
+
+<span>+92 300 1234567</span>
+
+</div>
+
+<div class="contact-item">
+
+<i class="fa-solid fa-envelope"></i>
+
+<span>support@pizzatrack.pk</span>
+
+</div>
+
+<div class="contact-item">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<span>Blue Area, Islamabad, Pakistan</span>
+
+</div>
+
+</div>
+
+<div class="contact-form">
+
+<form>
+
+<input
+type="text"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+placeholder="Email Address"
+required>
+
+<input
+type="tel"
+placeholder="Phone Number">
+
+<textarea
+rows="6"
+placeholder="Write your message..."
+required></textarea>
+
+<button
+type="submit"
+class="btn btn-primary">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================
+NEWSLETTER
+=================================== -->
+
+<section class="newsletter">
+
+<div class="container">
+
+<h2>
+
+Subscribe to our Newsletter
+
+</h2>
+
+<p>
+
+Receive our latest offers and promotions.
+
+</p>
+
+<form class="newsletter-form">
+
+<input
+type="email"
+placeholder="Enter your email">
+
+<button class="btn btn-primary">
+
+Subscribe
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ===================================
+LOCATION MAP
+=================================== -->
+
+<section class="section-padding map-section" id="location">
+
+<div class="container">
+
+<span class="section-tag">Find Us</span>
+
+<h2 class="section-title">Our Current Location In <span class="gradient-text">Islamabad</span></h2>
+
+<p class="section-subtitle">Visit us or track exactly where PizzaTrack is serving you from.</p>
+
+<div class="map-wrap" data-aos="fade-up">
+
+<iframe
+title="PizzaTrack location in Islamabad"
+src="https://www.google.com/maps?q=Blue+Area,+Islamabad,+Pakistan&output=embed"
+width="100%"
+height="100%"
+style="border:0;"
+allowfullscreen=""
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+</div>
+
+<div class="map-info">
+
+<div class="map-info-item">
+<i class="fa-solid fa-location-dot"></i>
+<span>Blue Area, Islamabad, Pakistan</span>
+</div>
+
+<div class="map-info-item">
+<i class="fa-solid fa-phone"></i>
+<span>+92 300 1234567</span>
+</div>
+
+<div class="map-info-item">
+<i class="fa-solid fa-clock"></i>
+<span>Open Daily · 11:00 AM – 11:00 PM</span>
+</div>
+
+<a href="https://www.google.com/maps?q=Blue+Area,+Islamabad,+Pakistan" target="_blank" rel="noopener" class="btn btn-primary">
+<i class="fa-solid fa-diamond-turn-right"></i>
+Get Directions
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================
+FOOTER
+=================================== -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h2 class="logo">
+
+Pizza<span>Track</span>
+
+</h2>
+
+<p>
+
+Premium Pizza Restaurant delivering
+fresh food with quality and passion.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+Quick Links
+
+</h3>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#menu">Menu</a></li>
+
+<li><a href="#deals">Deals</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#location">Location</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>
+
+Opening Hours
+
+</h3>
+
+<p>Monday - Sunday</p>
+
+<p>11:00 AM - 11:00 PM</p>
+
+</div>
+
+<div>
+
+<h3>
+
+Follow Us
+
+</h3>
+
+<div class="social-links">
+
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-x-twitter"></i></a>
+
+<a href="#"><i class="fab fa-youtube"></i></a>
+
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 PizzaTrack. All Rights Reserved.
+
+</p>
+
+<p>
+
+Designed & Developed by <strong>Sardar Haseeb</strong>
+
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- ===================================
+BACK TO TOP
+=================================== -->
+
+<button id="backToTop" class="back-to-top">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- =======================================================
+LOGIN / SIGN UP MODAL
+======================================================= -->
+
+<div class="auth-overlay" id="authOverlay"></div>
+
+<div class="auth-modal" id="authModal">
+
+    <button class="auth-close" id="authClose">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login">Login</button>
+        <button class="auth-tab" data-tab="signup">Sign Up</button>
+    </div>
+
+    <form class="auth-form active" id="loginForm">
+
+        <h3>Welcome Back</h3>
+        <p class="auth-subtitle">Login to continue ordering.</p>
+
+        <label>
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" id="loginEmail" placeholder="Email Address" required>
+        </label>
+
+        <label>
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+        </label>
+
+        <button type="submit" class="btn btn-primary auth-submit">Login</button>
+
+        <p class="auth-note">
+            Don't have an account?
+            <span class="auth-switch" data-tab="signup">Sign Up</span>
+        </p>
+
+    </form>
+
+    <form class="auth-form" id="signupForm">
+
+        <h3>Create Account</h3>
+        <p class="auth-subtitle">Sign up to save your cart and wishlist.</p>
+
+        <label>
+            <i class="fa-solid fa-user"></i>
+            <input type="text" id="signupName" placeholder="Full Name" required>
+        </label>
+
+        <label>
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" id="signupEmail" placeholder="Email Address" required>
+        </label>
+
+        <label>
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="signupPassword" placeholder="Password (min 6 characters)" required>
+        </label>
+
+        <button type="submit" class="btn btn-primary auth-submit">Sign Up</button>
+
+        <p class="auth-note">
+            Already have an account?
+            <span class="auth-switch" data-tab="login">Login</span>
+        </p>
+
+    </form>
+
+</div>
+
+<!-- =======================================================
+CHECKOUT / ORDER MODAL
+======================================================= -->
+
+<div class="order-overlay" id="orderOverlay"></div>
+
+<div class="order-modal" id="orderModal">
+
+    <button class="auth-close" id="orderClose">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <h3>Complete Your Order</h3>
+    <p class="auth-subtitle">Fill in your details to place the order.</p>
+
+    <div id="orderSummary" class="order-summary"></div>
+
+    <form id="orderForm">
+
+        <label>
+            <i class="fa-solid fa-user"></i>
+            <input type="text" id="orderName" placeholder="Full Name" required>
+        </label>
+
+        <label>
+            <i class="fa-solid fa-phone"></i>
+            <input type="tel" id="orderPhone" placeholder="Phone Number" required>
+        </label>
+
+        <label>
+            <i class="fa-solid fa-location-dot"></i>
+            <input type="text" id="orderAddress" placeholder="Delivery Address" required>
+        </label>
+
+        <button type="submit" class="btn btn-primary auth-submit" id="placeOrderBtn">
+            <i class="fa-solid fa-bag-shopping"></i>
+            Place Order
+        </button>
+
+        <button type="button" class="btn btn-outline auth-submit" id="whatsappOrderBtn">
+            <i class="fa-brands fa-whatsapp"></i>
+            Order via WhatsApp
+        </button>
+
+    </form>
+
+</div>
+
+<!-- ===================================
+SCRIPTS
+=================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

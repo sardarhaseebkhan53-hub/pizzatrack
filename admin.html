@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PizzaTrack Admin</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <aside class="sidebar" aria-label="Admin navigation">
+    <a href="index.html" class="brand" aria-label="Go to PizzaTrack website">
+      <img src="logo.png" alt="PizzaTrack">
+      <span>Pizza<span>Track</span></span>
+    </a>
+    <nav class="side-nav">
+      <a class="active" href="#orders"><i class="fa-solid fa-receipt"></i> Orders</a>
+      <a href="index.html"><i class="fa-solid fa-store"></i> Storefront</a>
+    </nav>
+  </aside>
+
+  <main class="admin-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Admin Dashboard</p>
+        <h1>Orders</h1>
+      </div>
+      <div class="topbar-actions">
+        <span class="sync-state" id="syncState">Ready</span>
+        <button class="icon-button" id="refreshBtn" type="button" aria-label="Refresh orders" title="Refresh orders">
+          <i class="fa-solid fa-rotate-right"></i>
+        </button>
+      </div>
+    </header>
+
+    <section class="stats-grid" aria-label="Order summary">
+      <article class="stat-card">
+        <span class="stat-icon pending"><i class="fa-solid fa-clock"></i></span>
+        <div><p>Pending</p><strong id="pendingCount">0</strong></div>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon active"><i class="fa-solid fa-fire-burner"></i></span>
+        <div><p>In Progress</p><strong id="activeCount">0</strong></div>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon done"><i class="fa-solid fa-circle-check"></i></span>
+        <div><p>Completed</p><strong id="completedCount">0</strong></div>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon revenue"><i class="fa-solid fa-money-bill-wave"></i></span>
+        <div><p>Revenue</p><strong id="revenueTotal">Rs0</strong></div>
+      </article>
+    </section>
+
+    <section class="panel" id="orders">
+      <div class="panel-head">
+        <div>
+          <h2>Manage Orders</h2>
+          <p id="orderCount">No orders loaded</p>
+        </div>
+        <div class="filters">
+          <label class="search-box" for="searchInput">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="searchInput" type="search" placeholder="Search customer, phone, item">
+          </label>
+          <select id="statusFilter" aria-label="Filter by status">
+            <option value="all">All statuses</option>
+            <option value="pending">Pending</option>
+            <option value="preparing">Preparing</option>
+            <option value="out for delivery">Out for delivery</option>
+            <option value="completed">Completed</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </div>
+      </div>
+      <div class="orders-list" id="ordersList" aria-live="polite">
+        <div class="empty-state">
+          <i class="fa-solid fa-receipt"></i>
+          <h3>Loading orders</h3>
+          <p>Fresh data is on the way.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="admin.js"></script>
+</body>
+</html>
