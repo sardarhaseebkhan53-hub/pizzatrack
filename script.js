@@ -650,6 +650,12 @@ counters.forEach(counter => counterObserver.observe(counter));
         localStorage.setItem("pizzaTheme", next);
         showToast(next === "light" ? "Day mode on ☀️" : "Night mode on 🌙", "info");
     });
+
+    document.getElementById("mobileThemeBtn")?.addEventListener("click", () => {
+        document.getElementById("mobileMenu")?.classList.remove("active");
+        document.getElementById("mobileToggle")?.classList.remove("active");
+        toggle.click();
+    });
 })();
 
 /* ==========================================================
@@ -1234,6 +1240,12 @@ if (!document.getElementById("wishlistSidebar")) {
     }
 
     wishlistBtn?.addEventListener("click", openWishlist);
+
+    document.getElementById("mobileWishlistBtn")?.addEventListener("click", () => {
+        document.getElementById("mobileMenu")?.classList.remove("active");
+        document.getElementById("mobileToggle")?.classList.remove("active");
+        openWishlist();
+    });
     closeWishlistBtn?.addEventListener("click", closeWishlistPanel);
     wishlistOverlay?.addEventListener("click", closeWishlistPanel);
 
