@@ -1738,3 +1738,417 @@ footer hr { border: none; border-top: 1px solid var(--line); margin-bottom: 24px
   outline: none;
   color: var(--text);
 }
+
+/* ============================================================
+   PIZZATRACK PRO — MOBILE RESPONSIVE ADDITIONS
+   Paste at the bottom of style.css
+   Targets ≤ 768px without touching desktop styles.
+============================================================ */
+
+/* ── Shared mobile section heading alignment ── */
+@media (max-width: 768px) {
+
+  /* Center section titles on all small screens */
+  .section-title {
+    text-align: center;
+  }
+
+  /* Slightly reduce section padding for breathing room */
+  .section-padding {
+    padding: 56px 0;
+  }
+
+  /* ── Deal cards: tighter content padding on mobile ── */
+  .deal-content {
+    padding: 22px 20px;
+    gap: 10px;
+  }
+
+  .deal-title {
+    font-size: 1.2rem;
+  }
+
+  /* Ensure deal card image fills width nicely when stacked */
+  .deal-card {
+    flex-direction: column;
+  }
+
+  .deal-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* ── Contact form: reduce padding for small screens ── */
+  .contact-form {
+    padding: 22px 18px;
+  }
+
+  /* ── About section: fix stacking order — image first on mobile ── */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-image {
+    order: -1; /* Show image above text on mobile */
+  }
+
+  /* ── About buttons wrap nicely ── */
+  .about-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .about-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ── Stats grid: ensure 2-col is readable ── */
+  .stat-card h2 {
+    font-size: 2rem;
+  }
+
+  /* ── Reviews: ensure cards don't have excess padding ── */
+  .review-card {
+    padding: 20px 18px;
+  }
+
+  /* ── FAQ: full-width comfortable touch targets ── */
+  .faq-question {
+    padding: 16px 16px;
+    font-size: 0.92rem;
+  }
+
+  /* ── Newsletter: stacked on all mobile ── */
+  .newsletter-form {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .newsletter-form input,
+  .newsletter-form .btn {
+    width: 100%;
+  }
+
+  /* ── Footer: ensure bottom copyright stacks cleanly ── */
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  /* ── Hero: better padding for content on mobile ── */
+  .hero-content {
+    padding: 0 4px;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+
+  /* ── Menu card actions: always visible on touch devices ──
+     On desktop these appear on hover; on mobile hover doesn't fire,
+     so we keep the action buttons always visible. ── */
+  .menu-actions {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* ── Prevent any element from causing horizontal scroll ── */
+  .container {
+    overflow-x: hidden;
+  }
+
+  /* ── Cookie banner: stack vertically at bottom ── */
+  .cookie-banner {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .cookie-buttons {
+    width: 100%;
+    justify-content: stretch;
+    gap: 8px;
+  }
+
+  .cookie-buttons .btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  /* ── Navbar: prevent any overflow on very wide logo text ── */
+  .logo h2 {
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* ── Mobile menu: ensure it doesn't cause body scroll ── */
+  .mobile-menu {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ── Cart/wishlist sidebars: full-width on mobile ── */
+  #cartPanel,
+  #wishlistPanel {
+    width: 100vw;
+    right: -100vw;
+  }
+
+  /* ── Cart sidebar open state ── */
+  #cartPanel.open,
+  #wishlistPanel.open {
+    right: 0;
+  }
+
+  /* ── Cart footer: stack coupon row if needed ── */
+  .coupon-row {
+    flex-direction: row; /* keep side by side, just tighten */
+    gap: 8px;
+  }
+
+  /* ── Ensure buttons in modals are full-width ── */
+  .auth-submit,
+  #checkoutBtn,
+  #placeOrderBtn,
+  #whatsappOrderBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ── Back to top: slightly smaller on mobile ── */
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 24px;
+    left: 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ── 480px and below: further tightening ── */
+@media (max-width: 480px) {
+
+  /* Hero buttons: full width on very small screens */
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Section title size floor */
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  /* Deal card: even tighter */
+  .deal-content {
+    padding: 18px 16px;
+  }
+
+  .deal-title {
+    font-size: 1.1rem;
+  }
+
+  /* Feature cards: more compact */
+  .feature-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+  }
+
+  /* Stat card numbers */
+  .stat-card h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Contact form inputs: ensure they're comfortable */
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px 14px;
+    font-size: 0.92rem;
+  }
+
+  /* Auth/Order modal: ensure it fits */
+  .auth-modal,
+  .order-modal {
+    padding: 24px 18px;
+    width: calc(100vw - 20px);
+  }
+
+  /* Category cards: reduce overlay padding */
+  .category-overlay {
+    padding: 16px;
+  }
+
+  .category-name {
+    font-size: 1rem;
+  }
+
+  .category-icon {
+    font-size: 2rem;
+  }
+
+  /* Section tag on top of headings */
+  .section-tag {
+    font-size: 0.76rem;
+  }
+
+  /* Menu badge font */
+  .menu-badge {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+
+  /* Footer column heading */
+  .footer-grid h3 {
+    margin-bottom: 10px;
+  }
+
+  /* Ensure mobile-menu-quick buttons are easy to tap */
+  .mobile-quick-btn {
+    padding: 14px 10px;
+    font-size: 0.85rem;
+  }
+
+  /* Cart product items: tighter layout */
+  .cart-product img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .cart-product-info h4 {
+    font-size: 0.85rem;
+  }
+
+  /* Wishlist panel on very small screens */
+  .wish-product img {
+    width: 58px;
+    height: 58px;
+  }
+
+  /* Toast notifications: full width at bottom on phones */
+  #toastContainer {
+    top: auto !important;
+    bottom: 80px !important;
+    right: 10px !important;
+    left: 10px !important;
+  }
+}
+
+/* ── 360px and below: micro adjustments ── */
+@media (max-width: 360px) {
+
+  /* Hero buttons stay full-width and stacked */
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+
+  /* Section headings */
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  /* Menu tabs: scrollable row instead of wrapping */
+  .menu-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+    justify-content: flex-start;
+  }
+
+  .menu-tabs::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  .menu-tabs button {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  /* About text size */
+  .about-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* ── Touch device: remove hover-dependent transforms that feel broken ── */
+@media (hover: none) and (pointer: coarse) {
+
+  /* Menu card: no lift on touch */
+  .menu-card:hover {
+    transform: none;
+  }
+
+  /* Feature card: no lift on touch */
+  .feature-card:hover {
+    transform: none;
+  }
+
+  /* Deal card: no lift on touch */
+  .deal-card:hover {
+    transform: none;
+  }
+
+  /* Review card: no lift */
+  .review-card:hover {
+    transform: none;
+  }
+
+  /* Keep category image scale but not the whole card */
+  .category-card:hover img {
+    transform: none;
+  }
+
+  /* Menu actions always visible on touch screens */
+  .menu-actions {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Buttons: remove translateY on active press — use scale instead */
+  .btn-primary:hover,
+  .btn-outline:hover {
+    transform: none;
+  }
+
+  /* Add proper active/press state for touch */
+  .btn-primary:active {
+    transform: scale(0.97);
+    transition: transform 0.1s;
+  }
+
+  .btn-outline:active {
+    transform: scale(0.97);
+    transition: transform 0.1s;
+  }
+
+  .add-cart:active {
+    transform: scale(0.96);
+  }
+}

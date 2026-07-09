@@ -372,6 +372,22 @@ if (menuBtn && mobileMenu) {
         });
     });
 }
+/* ==========================================================
+   MOBILE MENU — Close on outside click
+========================================================== */
+document.addEventListener("click", function (e) {
+    const mobileMenuEl = document.querySelector(".mobile-menu");
+    const mobileToggleEl = document.querySelector(".mobile-toggle");
+
+    if (!mobileMenuEl || !mobileToggleEl) return;
+    if (!mobileMenuEl.classList.contains("active")) return;
+
+    // If the click was outside both the menu and the toggle button, close it
+    if (!mobileMenuEl.contains(e.target) && !mobileToggleEl.contains(e.target)) {
+        mobileMenuEl.classList.remove("active");
+        mobileToggleEl.classList.remove("active");
+    }
+});
 
 /* ==========================================================
    SMOOTH SCROLL
@@ -508,6 +524,37 @@ document.querySelector(".prev-slide")?.addEventListener("click", () => {
 });
 
 document.querySelector(".next-slide")?.addEventListener("click", nextSlide);
+/* ==========================================================
+   HERO SLIDER — Touch swipe support for mobile
+========================================================== */
+(function () {
+    const heroEl = document.querySelector(".hero-slider");
+    if (!heroEl) return;
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    heroEl.addEventListener("touchstart", function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    heroEl.addEventListener("touchend", function (e) {
+        const dx = e.changedTouches[0].screenX - touchStartX;
+        const dy = e.changedTouches[0].screenY - touchStartY;
+
+        // Only register horizontal swipes (not vertical scrolls)
+        if (Math.abs(dx) < 50 || Math.abs(dy) > Math.abs(dx)) return;
+
+        if (dx < 0) {
+            // Swipe left → next slide
+            document.querySelector(".next-slide")?.click();
+        } else {
+            // Swipe right → previous slide
+            document.querySelector(".prev-slide")?.click();
+        }
+    }, { passive: true });
+})();
 
 /* ==========================================================
    SEARCH OVERLAY + LIVE SEARCH
